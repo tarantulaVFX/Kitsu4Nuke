@@ -3,7 +3,6 @@
 #
 # (c) 2021 Tarantula
 # Author: Moses Molina
-# email:  moses.tarantula@gmail.com
 # --------------------------------------------------------------------
 
 
