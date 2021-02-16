@@ -13,4 +13,5 @@ Kitsu plugin for Nuke
 &nbsp;  
 &nbsp;  
 &nbsp;  
-_(c) 2021 Tarantula_
+#
+_(c) 2021 Tarantula_ 
