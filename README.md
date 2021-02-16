@@ -9,7 +9,8 @@ Kitsu plugin for Nuke
 - Login to a kitsu server
 - Automcaitally detect the kitsu shot based on file path
 - Post a comment to a kitsu shot
-- Render and attach mp4 previews to comments
-
-
-(c) 2021 Tarantula
+- Render and attach mp4 previews to comments  
+&nbsp;  
+&nbsp;  
+&nbsp;  
+_(c) 2021 Tarantula_
