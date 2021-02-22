@@ -1,6 +1,9 @@
 # Kitsu4Nuke
 Kitsu plugin for Nuke
 
+## OS Support
+Current only tested on Windows 10.
+
 ## Installation
 1. Copy the Kitsu4Nuke folder into your .nuke/ folder.
 2. Append init.py to the init.py in your .nuke/ folder:
