@@ -26,15 +26,15 @@ import re
 import struct
 from functools import reduce
 
-from Cryptodome.Util.py3compat import (tobytes, bord, _copy_bytes, iter_range,
+from ..Util.py3compat import (tobytes, bord, _copy_bytes, iter_range,
                                   tostr, bchr, bstr)
 
-from Cryptodome.Hash import SHA1, SHA256, HMAC, CMAC, BLAKE2s
-from Cryptodome.Util.strxor import strxor
-from Cryptodome.Random import get_random_bytes
-from Cryptodome.Util.number import size as bit_size, long_to_bytes, bytes_to_long
+from ..Hash import SHA1, SHA256, HMAC, CMAC, BLAKE2s
+from ..Util.strxor import strxor
+from ..Random import get_random_bytes
+from ..Util.number import size as bit_size, long_to_bytes, bytes_to_long
 
-from Cryptodome.Util._raw_api import (load_pycryptodome_raw_lib,
+from ..Util._raw_api import (load_pycryptodome_raw_lib,
                                   create_string_buffer,
                                   get_raw_buffer, c_size_t)
 

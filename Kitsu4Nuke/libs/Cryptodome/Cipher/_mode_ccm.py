@@ -37,15 +37,15 @@ __all__ = ['CcmMode']
 import struct
 from binascii import unhexlify
 
-from Cryptodome.Util.py3compat import (byte_string, bord,
+from ..Util.py3compat import (byte_string, bord,
                                    _copy_bytes)
-from Cryptodome.Util._raw_api import is_writeable_buffer
+from ..Util._raw_api import is_writeable_buffer
 
-from Cryptodome.Util.strxor import strxor
-from Cryptodome.Util.number import long_to_bytes
+from ..Util.strxor import strxor
+from ..Util.number import long_to_bytes
 
-from Cryptodome.Hash import BLAKE2s
-from Cryptodome.Random import get_random_bytes
+from ..Hash import BLAKE2s
+from ..Random import get_random_bytes
 
 
 def enum(**enums):

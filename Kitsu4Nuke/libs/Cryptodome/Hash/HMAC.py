@@ -31,14 +31,14 @@
 # POSSIBILITY OF SUCH DAMAGE.
 # ===================================================================
 
-from Cryptodome.Util.py3compat import bord, tobytes
+from ..Util.py3compat import bord, tobytes
 
 from binascii import unhexlify
 
-from Cryptodome.Hash import MD5
-from Cryptodome.Hash import BLAKE2s
-from Cryptodome.Util.strxor import strxor
-from Cryptodome.Random import get_random_bytes
+from ..Hash import MD5
+from ..Hash import BLAKE2s
+from ..Util.strxor import strxor
+from ..Random import get_random_bytes
 
 __all__ = ['new', 'HMAC']
 

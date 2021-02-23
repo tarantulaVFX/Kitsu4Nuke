@@ -30,10 +30,10 @@
 
 from binascii import unhexlify
 
-from Cryptodome.Util.py3compat import bord, tobytes
+from ..Util.py3compat import bord, tobytes
 
-from Cryptodome.Random import get_random_bytes
-from Cryptodome.Util._raw_api import (load_pycryptodome_raw_lib,
+from ..Random import get_random_bytes
+from ..Util._raw_api import (load_pycryptodome_raw_lib,
                                   VoidPointer, SmartPointer,
                                   create_string_buffer,
                                   get_raw_buffer, c_size_t,

@@ -26,13 +26,13 @@ Counter Feedback (CFB) mode.
 
 __all__ = ['CfbMode']
 
-from Cryptodome.Util.py3compat import _copy_bytes
-from Cryptodome.Util._raw_api import (load_pycryptodome_raw_lib, VoidPointer,
+from ..Util.py3compat import _copy_bytes
+from ..Util._raw_api import (load_pycryptodome_raw_lib, VoidPointer,
                                   create_string_buffer, get_raw_buffer,
                                   SmartPointer, c_size_t, c_uint8_ptr,
                                   is_writeable_buffer)
 
-from Cryptodome.Random import get_random_bytes
+from ..Random import get_random_bytes
 
 raw_cfb_lib = load_pycryptodome_raw_lib("Cryptodome.Cipher._raw_cfb","""
                     int CFB_start_operation(void *cipher,

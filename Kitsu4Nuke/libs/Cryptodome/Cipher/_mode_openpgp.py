@@ -34,8 +34,8 @@ OpenPGP mode.
 
 __all__ = ['OpenPgpMode']
 
-from Cryptodome.Util.py3compat import _copy_bytes
-from Cryptodome.Random import get_random_bytes
+from ..Util.py3compat import _copy_bytes
+from ..Random import get_random_bytes
 
 class OpenPgpMode(object):
     """OpenPGP mode.

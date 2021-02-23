@@ -26,7 +26,7 @@ Electronic Code Book (ECB) mode.
 
 __all__ = [ 'EcbMode' ]
 
-from Cryptodome.Util._raw_api import (load_pycryptodome_raw_lib,
+from ..Util._raw_api import (load_pycryptodome_raw_lib,
                                   VoidPointer, create_string_buffer,
                                   get_raw_buffer, SmartPointer,
                                   c_size_t, c_uint8_ptr,

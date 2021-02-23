@@ -30,8 +30,8 @@
 
 import abc
 import sys
-from Cryptodome.Util.py3compat import byte_string
-from Cryptodome.Util._file_system import pycryptodome_filename
+from .py3compat import byte_string
+from ._file_system import pycryptodome_filename
 
 #
 # List of file suffixes for Python extensions

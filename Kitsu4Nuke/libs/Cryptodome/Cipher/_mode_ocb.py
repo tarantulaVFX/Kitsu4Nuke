@@ -71,14 +71,13 @@ Example:
 import struct
 from binascii import unhexlify
 
-from Cryptodome.Util.py3compat import bord, _copy_bytes
-from Cryptodome.Util.number import long_to_bytes, bytes_to_long
-from Cryptodome.Util.strxor import strxor
+from ..Util.py3compat import bord, _copy_bytes
+from ..Util.number import long_to_bytes, bytes_to_long
+from ..Util.strxor import strxor
 
-from Cryptodome.Hash import BLAKE2s
-from Cryptodome.Random import get_random_bytes
-
-from Cryptodome.Util._raw_api import (load_pycryptodome_raw_lib, VoidPointer,
+from ..Hash import BLAKE2s
+from ..Random import get_random_bytes
+from ..Util._raw_api import (load_pycryptodome_raw_lib, VoidPointer,
                                   create_string_buffer, get_raw_buffer,
                                   SmartPointer, c_size_t, c_uint8_ptr,
                                   is_buffer)

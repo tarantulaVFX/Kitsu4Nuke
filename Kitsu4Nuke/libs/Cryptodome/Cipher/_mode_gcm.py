@@ -36,19 +36,19 @@ __all__ = ['GcmMode']
 
 from binascii import unhexlify
 
-from Cryptodome.Util.py3compat import bord, _copy_bytes
+from ..Util.py3compat import bord, _copy_bytes
 
-from Cryptodome.Util._raw_api import is_buffer
+from ..Util._raw_api import is_buffer
 
-from Cryptodome.Util.number import long_to_bytes, bytes_to_long
-from Cryptodome.Hash import BLAKE2s
-from Cryptodome.Random import get_random_bytes
+from ..Util.number import long_to_bytes, bytes_to_long
+from ..Hash import BLAKE2s
+from ..Random import get_random_bytes
 
-from Cryptodome.Util._raw_api import (load_pycryptodome_raw_lib, VoidPointer,
+from ..Util._raw_api import (load_pycryptodome_raw_lib, VoidPointer,
                                   create_string_buffer, get_raw_buffer,
                                   SmartPointer, c_size_t, c_uint8_ptr)
 
-from Cryptodome.Util import _cpu_features
+from ..Util import _cpu_features
 
 
 # C API by module implementing GHASH

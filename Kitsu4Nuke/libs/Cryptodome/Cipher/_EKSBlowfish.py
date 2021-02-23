@@ -30,8 +30,8 @@
 
 import sys
 
-from Cryptodome.Cipher import _create_cipher
-from Cryptodome.Util._raw_api import (load_pycryptodome_raw_lib,
+from . import _create_cipher
+from ..Util._raw_api import (load_pycryptodome_raw_lib,
                                   VoidPointer, SmartPointer, c_size_t,
                                   c_uint8_ptr, c_uint)
 

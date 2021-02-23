@@ -30,8 +30,9 @@ def create_client(host):
 
 
 default_client = None
+from .. import requests
 try:
-    import requests
+    from .. import requests
 
     # Little hack to allow json encoder to manage dates.
     requests.models.complexjson.dumps = functools.partial(

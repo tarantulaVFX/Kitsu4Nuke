@@ -15,10 +15,10 @@ import sys
 # such as in Embedded Python. See https://github.com/psf/requests/issues/3578.
 import encodings.idna
 
-from urllib3.fields import RequestField
-from urllib3.filepost import encode_multipart_formdata
-from urllib3.util import parse_url
-from urllib3.exceptions import (
+from ..urllib3.fields import RequestField
+from ..urllib3.filepost import encode_multipart_formdata
+from ..urllib3.util import parse_url
+from ..urllib3.exceptions import (
     DecodeError, ReadTimeoutError, ProtocolError, LocationParseError)
 
 from io import UnsupportedOperation

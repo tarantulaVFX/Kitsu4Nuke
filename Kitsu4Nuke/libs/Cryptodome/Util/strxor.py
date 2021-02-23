@@ -28,7 +28,7 @@
 # POSSIBILITY OF SUCH DAMAGE.
 # ===================================================================
 
-from Cryptodome.Util._raw_api import (load_pycryptodome_raw_lib, c_size_t,
+from ..Util._raw_api import (load_pycryptodome_raw_lib, c_size_t,
                                   create_string_buffer, get_raw_buffer,
                                   c_uint8_ptr, is_writeable_buffer)
 

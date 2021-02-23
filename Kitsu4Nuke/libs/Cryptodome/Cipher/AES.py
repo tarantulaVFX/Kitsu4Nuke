@@ -37,13 +37,13 @@ Module's constants for the modes of operation supported with AES:
 
 import sys
 
-from Cryptodome.Cipher import _create_cipher
-from Cryptodome.Util._raw_api import (load_pycryptodome_raw_lib,
+from ..Cipher import _create_cipher
+from ..Util._raw_api import (load_pycryptodome_raw_lib,
                                   VoidPointer, SmartPointer,
                                   c_size_t, c_uint8_ptr)
 
-from Cryptodome.Util import _cpu_features
-from Cryptodome.Random import get_random_bytes
+from ..Util import _cpu_features
+from ..Random import get_random_bytes
 
 
 _cproto = """

@@ -3,8 +3,8 @@ import sys
 # This code exists for backwards compatibility reasons.
 # I don't like it either. Just look the other way. :)
 
-for package in ('urllib3', 'idna', 'chardet'):
-    locals()[package] = __import__(package)
+for package in ('libs.urllib3', 'libs.idna', 'libs.chardet'):
+    locals()[package] = __import__(package, level=1)
     # This traversal is apparently necessary such that the identities are
     # preserved (requests.packages.urllib3.* is urllib3.*)
     for mod in list(sys.modules):

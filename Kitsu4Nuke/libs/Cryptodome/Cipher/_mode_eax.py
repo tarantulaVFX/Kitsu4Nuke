@@ -37,15 +37,15 @@ __all__ = ['EaxMode']
 import struct
 from binascii import unhexlify
 
-from Cryptodome.Util.py3compat import byte_string, bord, _copy_bytes
+from ..Util.py3compat import byte_string, bord, _copy_bytes
 
-from Cryptodome.Util._raw_api import is_buffer
+from ..Util._raw_api import is_buffer
 
-from Cryptodome.Util.strxor import strxor
-from Cryptodome.Util.number import long_to_bytes, bytes_to_long
+from ..Util.strxor import strxor
+from ..Util.number import long_to_bytes, bytes_to_long
 
-from Cryptodome.Hash import CMAC, BLAKE2s
-from Cryptodome.Random import get_random_bytes
+from ..Hash import CMAC, BLAKE2s
+from ..Random import get_random_bytes
 
 
 class EaxMode(object):

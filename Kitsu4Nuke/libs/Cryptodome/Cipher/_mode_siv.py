@@ -36,14 +36,14 @@ __all__ = ['SivMode']
 
 from binascii import hexlify, unhexlify
 
-from Cryptodome.Util.py3compat import bord, _copy_bytes
+from ..Util.py3compat import bord, _copy_bytes
 
-from Cryptodome.Util._raw_api import is_buffer
+from ..Util._raw_api import is_buffer
 
-from Cryptodome.Util.number import long_to_bytes, bytes_to_long
-from Cryptodome.Protocol.KDF import _S2V
-from Cryptodome.Hash import BLAKE2s
-from Cryptodome.Random import get_random_bytes
+from ..Util.number import long_to_bytes, bytes_to_long
+from ..Protocol.KDF import _S2V
+from ..Hash import BLAKE2s
+from ..Random import get_random_bytes
 
 
 class SivMode(object):

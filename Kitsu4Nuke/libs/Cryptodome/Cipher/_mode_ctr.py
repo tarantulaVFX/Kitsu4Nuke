@@ -28,14 +28,14 @@ __all__ = ['CtrMode']
 
 import struct
 
-from Cryptodome.Util._raw_api import (load_pycryptodome_raw_lib, VoidPointer,
+from ..Util._raw_api import (load_pycryptodome_raw_lib, VoidPointer,
                                   create_string_buffer, get_raw_buffer,
                                   SmartPointer, c_size_t, c_uint8_ptr,
                                   is_writeable_buffer)
 
-from Cryptodome.Random import get_random_bytes
-from Cryptodome.Util.py3compat import _copy_bytes, is_native_int
-from Cryptodome.Util.number import long_to_bytes
+from ..Random import get_random_bytes
+from ..Util.py3compat import _copy_bytes, is_native_int
+from ..Util.number import long_to_bytes
 
 raw_ctr_lib = load_pycryptodome_raw_lib("Cryptodome.Cipher._raw_ctr", """
                     int CTR_start_operation(void *cipher,

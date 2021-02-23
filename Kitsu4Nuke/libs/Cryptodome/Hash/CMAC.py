@@ -22,11 +22,11 @@
 
 from binascii import unhexlify
 
-from Cryptodome.Hash import BLAKE2s
-from Cryptodome.Util.strxor import strxor
-from Cryptodome.Util.number import long_to_bytes, bytes_to_long
-from Cryptodome.Util.py3compat import bord, tobytes, _copy_bytes
-from Cryptodome.Random import get_random_bytes
+from ..Hash import BLAKE2s
+from ..Util.strxor import strxor
+from ..Util.number import long_to_bytes, bytes_to_long
+from ..Util.py3compat import bord, tobytes, _copy_bytes
+from ..Random import get_random_bytes
 
 
 # The size of the authentication tag produced by the MAC.

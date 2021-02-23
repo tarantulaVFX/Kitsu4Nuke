@@ -27,8 +27,8 @@
 import math
 import sys
 import struct
-from Cryptodome import Random
-from Cryptodome.Util.py3compat import iter_range
+from .. import Random
+from ..Util.py3compat import iter_range
 
 # Backward compatibility
 _fastmath = None

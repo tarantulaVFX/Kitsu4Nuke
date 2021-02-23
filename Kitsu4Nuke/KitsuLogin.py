@@ -3,7 +3,6 @@
 #
 # (c) 2021 Tarantula
 # Author: Moses Molina
-# email:  moses.tarantula@gmail.com
 # --------------------------------------------------------------------
 
 from PySide2.QtWidgets import *
@@ -21,6 +20,7 @@ class KitsuLogin(QDialog):
         self.setMinimumSize(250, 175)
         layout = self.layout = QVBoxLayout()
 
+        # setup widgets
         self.url = QLineEdit()
         self.url.setPlaceholderText('kitsu server address')
         self.username = QLineEdit()

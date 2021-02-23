@@ -3,7 +3,6 @@
 #
 # (c) 2021 Tarantula
 # Author: Moses Molina
-# email:  moses.tarantula@gmail.com
 # --------------------------------------------------------------------
 
 import os
@@ -14,13 +13,14 @@ import hashlib
 import libs.gazu as gazu
 import nuke
 
+# add the libs directory to the sys path again for some reason
 p = os.path.dirname(os.path.abspath(__file__))
 rootDir = str(p).replace('\\', '/')
 libs = rootDir + "/libs"
-sys.path.append(libs)
+# sys.path.append(libs)
 
-from Cryptodome.Cipher import AES
-from Cryptodome import Random
+from libs.Cryptodome.Cipher import AES
+from libs.Cryptodome import Random
 from PySide2.QtCore import *
 from libs.gazu.exception import AuthFailedException
 
@@ -113,8 +113,6 @@ class KitsuSession(QObject):
 
     def postComment(self, in_task, in_status, comment, file=None):
         try:
-            # with open('C:/Users/moses/Documents/moses_log.txt', 'a+') as log:
-                # log.write('\nstart proccessing comment\n')
             task = self.getTask(in_task['id'])
             task_status = self.getTaskStatus(in_status['id'])
             if comment == '':
@@ -125,7 +123,6 @@ class KitsuSession(QObject):
             prev_file = None
             main_prev = None
             if file:
-                # log.write('\nstart uploading preview\n')
                 prev_file = gazu.task.add_preview(task, posted_comment, file)
                 main_prev = gazu.task.set_main_preview(prev_file)
 
@@ -133,7 +130,6 @@ class KitsuSession(QObject):
                 if file:
                     if prev_file.get('type') == "PreviewFile":
                         if main_prev.get('preview_file_id') == prev_file.get('id'):
-                            # log.write('\npost completed\n')
                             self.notify_poster('Posted!')
                         else:
                             self.notify_poster('Posted, but failed to set main preview!')
@@ -181,7 +177,6 @@ def getConfig():
     conf_file = rootDir + "/config.json"
 
     try:
-        # Create config if it doesn't exist
         if not os.path.isfile(conf_file):
             with open(conf_file, "w+") as conf:
 
