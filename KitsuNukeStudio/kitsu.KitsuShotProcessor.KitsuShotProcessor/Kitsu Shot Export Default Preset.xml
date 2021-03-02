@@ -1,0 +1,91 @@
+<root presetname="Kitsu Shot Export Default Preset" tasktype="kitsu.KitsuShotProcessor.KitsuShotProcessor">
+    <startFrameIndex valuetype="int">1001</startFrameIndex>
+    <exportRoot valuetype="str">{projectroot}</exportRoot>
+    <versionIndex valuetype="int">1</versionIndex>
+    <cutUseHandles valuetype="bool">False</cutUseHandles>
+    <versionPadding valuetype="int">2</versionPadding>
+    <kitsuProjectID valuetype="unicode">0</kitsuProjectID>
+    <exportTemplate valuetype="list">
+        <SequenceItem valuetype="tuple">
+            <SequenceItem valuetype="str">{shot}/{shot}_plate{track}_{version}_####.{ext}</SequenceItem>
+            <SequenceItem valuetype="kitsu.KitsuPreviewExporter.KitsuPreviewPreset">
+                <root presetname="kitsu.KitsuPreviewExporter.KitsuPreviewExporter" tasktype="kitsu.KitsuPreviewExporter.KitsuPreviewExporter">
+                    <bitDepth valuetype="str">24 bit</bitDepth>
+                    <colourspace valuetype="str">default</colourspace>
+                    <file_type valuetype="unicode">mov</file_type>
+                    <channels valuetype="str">rgb</channels>
+                    <includeAudio valuetype="bool">False</includeAudio>
+                    <kitsuProjectID valuetype="unicode">0</kitsuProjectID>
+                    <useSingleSocket valuetype="bool">False</useSingleSocket>
+                    <numChannels valuetype="str">stereo</numChannels>
+                    <additionalNodesData valuetype="list" />
+                    <includeEffects valuetype="bool">True</includeEffects>
+                    <codec valuetype="str">linear PCM (wav)</codec>
+                    <reformat valuetype="dict">
+                        <filter valuetype="str">Cubic</filter>
+                        <to_type valuetype="str">None</to_type>
+                        <scale valuetype="float">1.0</scale>
+                        <center valuetype="bool">True</center>
+                        <resize valuetype="str">width</resize>
+                    </reformat>
+                    <keepNukeScript valuetype="bool">False</keepNukeScript>
+                    <bitRate valuetype="str">320 kbp/s</bitRate>
+                    <method valuetype="str">Blend</method>
+                    <views valuetype="list">
+                        <SequenceItem valuetype="str">all</SequenceItem>
+                    </views>
+                    <burninData valuetype="dict">
+                        <burnIn_bottomRight valuetype="NoneType">None</burnIn_bottomRight>
+                        <burnIn_topLeft valuetype="NoneType">None</burnIn_topLeft>
+                        <burnIn_topMiddle valuetype="NoneType">None</burnIn_topMiddle>
+                        <burnIn_padding valuetype="NoneType">None</burnIn_padding>
+                        <burnIn_topRight valuetype="NoneType">None</burnIn_topRight>
+                        <burnIn_textSize valuetype="NoneType">None</burnIn_textSize>
+                        <burnIn_bottomLeft valuetype="NoneType">None</burnIn_bottomLeft>
+                        <burnIn_bottomMiddle valuetype="NoneType">None</burnIn_bottomMiddle>
+                        <burnIn_font valuetype="NoneType">None</burnIn_font>
+                    </burninData>
+                    <mov valuetype="dict">
+                        <mov64_dnxhr_codec_profile valuetype="NoneType">None</mov64_dnxhr_codec_profile>
+                        <mov64_quality_min valuetype="NoneType">None</mov64_quality_min>
+                        <dataRange valuetype="str">Video Range</dataRange>
+                        <mov_h264_codec_profile valuetype="NoneType">None</mov_h264_codec_profile>
+                        <mov64_gop_size valuetype="NoneType">None</mov64_gop_size>
+                        <mov_prores_codec_profile valuetype="str">ProRes 4:2:2 HQ 10-bit</mov_prores_codec_profile>
+                        <mov64_b_frames valuetype="NoneType">None</mov64_b_frames>
+                        <mov64_write_timecode valuetype="bool">True</mov64_write_timecode>
+                        <mov64_bitrate_tolerance valuetype="NoneType">None</mov64_bitrate_tolerance>
+                        <mov64_dnxhd_codec_profile valuetype="NoneType">None</mov64_dnxhd_codec_profile>
+                        <mov64_bitrate valuetype="NoneType">None</mov64_bitrate>
+                        <mov64_pixel_format valuetype="NoneType">None</mov64_pixel_format>
+                        <mov64_codec valuetype="str">appr</mov64_codec>
+                        <mov64_limit_bitrate valuetype="NoneType">None</mov64_limit_bitrate>
+                        <mov64_quality valuetype="NoneType">None</mov64_quality>
+                        <mov64_quality_max valuetype="NoneType">None</mov64_quality_max>
+                        <mov64_fast_start valuetype="bool">True</mov64_fast_start>
+                        <encoder valuetype="str">mov64</encoder>
+                        <mov64_ycbcr_matrix_type valuetype="str">Auto</mov64_ycbcr_matrix_type>
+                    </mov>
+                    <readAllLinesForExport valuetype="bool">True</readAllLinesForExport>
+                    <deleteAudio valuetype="bool">True</deleteAudio>
+                    <burninDataEnabled valuetype="bool">False</burninDataEnabled>
+                    <additionalNodesEnabled valuetype="bool">False</additionalNodesEnabled>
+                    <dpx valuetype="dict">
+                        <datatype valuetype="str">8 bit</datatype>
+                        <transfer valuetype="str">(auto detect)</transfer>
+                        <bigEndian valuetype="bool">True</bigEndian>
+                        <fill valuetype="bool">False</fill>
+                    </dpx>
+                    <writeNodeName valuetype="str">Write_{ext}</writeNodeName>
+                    <sampleRate valuetype="str">44100 Hz</sampleRate>
+                </root>
+            </SequenceItem>
+        </SequenceItem>
+    </exportTemplate>
+    <excludeTags valuetype="list" />
+    <includeTags valuetype="list" />
+    <includeRetimes valuetype="bool">False</includeRetimes>
+    <startFrameSource valuetype="str">Source</startFrameSource>
+    <cutLength valuetype="bool">False</cutLength>
+    <cutHandles valuetype="int">12</cutHandles>
+</root>

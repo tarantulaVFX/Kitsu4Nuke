@@ -13,12 +13,6 @@ import hashlib
 import libs.gazu as gazu
 import nuke
 
-# add the libs directory to the sys path again for some reason
-p = os.path.dirname(os.path.abspath(__file__))
-rootDir = str(p).replace('\\', '/')
-libs = rootDir + "/libs"
-# sys.path.append(libs)
-
 from libs.Cryptodome.Cipher import AES
 from libs.Cryptodome import Random
 from PySide2.QtCore import *
@@ -73,6 +67,20 @@ def auth_kitsu_account():
     return False
 
 
+def check_user_role():
+    session = auth_kitsu_account()
+    if session:
+        # This check relies on kitsu only allowing Supervisors and Managers to see the "role" data of a person.
+        # More specifically, it relies on all other types of users not being able to see their own role. 
+        # I do not like this check, but it works for now.
+        if session.person.get("role"):
+            return session
+        else:
+            return -2
+    else:
+        return -1
+
+
 class KitsuSession(QObject):
     onPostedComment = Signal(str)
 
@@ -87,16 +95,22 @@ class KitsuSession(QObject):
         self.onPostedComment.emit(result)
 
     def getProjects(self):
-        # return gazu.project.all_projects()
         return gazu.user.all_open_projects()
 
+    def getAllProjects(self):
+        return gazu.project.all_projects()
+
     def getSeqsForProj(self, id):
-        # return gazu.shot.all_sequences_for_project(id)
         return gazu.user.all_sequences_for_project(id)
 
-    def getShotsForSeq(self, d):
-        # return gazu.shot.all_shots_for_sequence(d)
-        return gazu.user.all_shots_for_sequence(d)
+    def getAllSeqsForProj(self, id):
+        return gazu.shot.all_sequences_for_project(id)
+
+    def getShotsForSeq(self, id):
+        return gazu.user.all_shots_for_sequence(id)
+
+    def getAllShotsForSeq(self, id):
+        return gazu.shot.all_shots_for_sequence(id)  
 
     def getShotTasks(self, id):
         # return gazu.task.all_tasks_for_shot(id)
@@ -111,6 +125,18 @@ class KitsuSession(QObject):
     def getTaskType(self, task_type_id):
         return gazu.task.get_task_type(task_type_id)
 
+    def getSequenceByName(self, project_id, name):
+        return gazu.shot.get_sequence_by_name(project_id, name)
+        
+    def createSequence(self, project_id, name):
+        return gazu.shot.new_sequence(project_id, name)
+    
+    def createShot(self, project, sequence, shot, frame_in=0, frame_out=100):
+        return gazu.shot.new_shot(project, sequence, shot, frame_in=frame_in, frame_out=frame_out)
+    
+    def createTask(self, entity, task_type, task_status):
+        return gazu.task.new_task(entity, task_type, task_status=task_status)
+    
     def postComment(self, in_task, in_status, comment, file=None):
         try:
             task = self.getTask(in_task['id'])
@@ -139,8 +165,10 @@ class KitsuSession(QObject):
                     self.notify_poster('Posted!')
             else:
                 self.notify_poster('Failed to post!')
+            return (posted_comment, main_prev)
         except Exception as e:
             self.notify_poster('Failed to post: ' + str(e))
+            return (False, False)
 
     def getTaskStatus(self, id):
         return gazu.task.get_task_status(id)
@@ -150,6 +178,9 @@ class KitsuSession(QObject):
 
     def getShot(self, id):
         return gazu.shot.get_shot(id)
+
+    def logout(self):
+        gazu.log_out()
 
     def authenticate(self):
         host = removeLastSlash(self.config['kitsu_url'])
@@ -163,7 +194,8 @@ class KitsuSession(QObject):
             self.tokens = gazu.log_in(self.config['kitsu_email'], self.config['kitsu_password'])
             if not self.tokens:
                 self.status = 'Failed to login'
-
+            else:
+                self.person = gazu.person.get_person_by_email(self.config['kitsu_email'])
         except AuthFailedException as e:
             self.tokens = None
             self.status = 'Wrong username or password'
